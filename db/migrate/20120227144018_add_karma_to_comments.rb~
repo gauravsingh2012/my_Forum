@@ -1,0 +1,6 @@
+class AddKarmaToComments < ActiveRecord::Migration
+  def change
+    add_column :comments, :karma, :integer
+
+  end
+end

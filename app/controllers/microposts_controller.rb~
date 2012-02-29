@@ -1,0 +1,19 @@
+class MicropostsController < ApplicationController
+  def create
+   @microposts = Micropost.new(params[:user])
+    if @micropost.save
+            flash[:success] = "Micropost created!"
+      microposts.paginate(page: params[:page])
+
+      # Handle a successful save.
+    else
+      render 'new'
+    end
+  end
+
+  def destroy
+  end
+  def show
+
+  end
+end

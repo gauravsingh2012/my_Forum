@@ -1,0 +1,38 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1
+{
+position:relative;
+left: 700px;
+top: 200px;
+font-size: 50px
+}
+
+.container_ask{
+position:relative;
+top: -200px;
+left: 0px;
+}
+
+h2
+{
+position:relative;
+left: 100px;
+top: -100px;
+font-size: 50px
+}
+
+section {
+background: white;
+}
+
+nav div {
+  position:relative;
+  left: 430px;
+  top:0px;
+  
+}
+
+

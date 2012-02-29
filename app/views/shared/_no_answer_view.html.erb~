@@ -1,0 +1,15 @@
+@post = Post.find(params[:id])
+<h1> <%= @post.content %></h1>
+
+<%= @post.name %>
+
+<h2> Answers </h2>
+
+<% @post.comments.each do |comment| %>
+ <p>
+  <%= comment.text %>
+ </p>
+ <p>
+  <%= time_ago_in_words comment.created_at %> ago 
+ </p>
+<% end %>

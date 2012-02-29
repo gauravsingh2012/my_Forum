@@ -1,0 +1,4 @@
+$('<%= escape_javascript(render 'posts/post')%>')
+  .appendTo('#postform')
+  .hide()
+  .fadeIn()

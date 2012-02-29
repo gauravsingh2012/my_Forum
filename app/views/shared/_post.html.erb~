@@ -1,0 +1,8 @@
+<h1><%= link_to post.content,post %></h1>
+  <p>
+   Posted By:<%= mail_to(post.email,post.name) %>
+  </p>
+  <p>
+  <%= time_ago_in_words post.created_at %> ago
+  </p>
+  <hr />

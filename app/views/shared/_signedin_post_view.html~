@@ -1,0 +1,16 @@
+<% @posts = Post.all %>
+<h1> Questions & Answers Blog </h1>
+
+<% @posts.each do |post| %>
+  <h2><%= link_to post.content,post %></h2>
+  <p>
+   <%= time_ago_in_words post.created_at %> ago
+  </p>
+  <p>
+   <%= mail_to(post.email,post.name) %>
+  </p>
+  <%= render partial: 'posts/show' %>
+<hr />
+<% end %>
+
+

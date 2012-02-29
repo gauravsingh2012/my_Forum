@@ -1,0 +1,28 @@
+<h1>Q 'n' A</h1>
+<div class="container">
+<%= form_for(:session, url: sessions_path) do |f| %>
+ <nav class="round">
+  <div class="field1">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field2">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign in" %>
+  </div>
+ </nav>
+  <section class="round">
+   <%= yield %>
+  </section>
+<% end %>
+
+
+<%= render 'shared/postview' %>
+
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</div>
+
+

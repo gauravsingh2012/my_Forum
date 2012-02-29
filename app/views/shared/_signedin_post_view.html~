@@ -1,3 +1,4 @@
+<div class="Signup">
 <% @posts = Post.all %>
 <h1> Questions & Answers Blog </h1>
 
@@ -9,8 +10,7 @@
   <p>
    <%= mail_to(post.email,post.name) %>
   </p>
-  <%= render partial: 'posts/show' %>
-<hr />
+ <hr />
 <% end %>
 
 

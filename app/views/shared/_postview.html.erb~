@@ -1,10 +1,11 @@
 <div id = "postform">
- <div class = "container_ask">
-  <%= render :partial => 'posts/form' %>
- </div>
-<h2> Questions Status </h2>
+
+<%= render :partial => 'posts/form' %>
+
+<h2> Questions </h2>
 <% @posts = Post.all %>
 <hr />
+
 <% @posts.each do |post| %>
   <h3><%= link_to post.content,post %></h3>
   <p>
@@ -14,6 +15,7 @@
   <%= time_ago_in_words post.created_at %> ago
   </p>
   <hr />
+</div>
 <% end %>
 </div>
 

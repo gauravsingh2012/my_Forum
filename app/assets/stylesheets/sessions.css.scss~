@@ -2,37 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1
-{
-position:relative;
-left: 700px;
-top: 200px;
-font-size: 50px
+div {
+  &.field1 {
+    position:relative;
+    top:-70px;	
+    left:690px;
+    margin-bottom: 10px; }
+
+&.field2 {
+    position:relative;
+    top:-129px;
+    left:950px;
+    margin-bottom: 10px; }
+
+&.actions1 {
+    position:relative;
+    top:-167px;
+    left:1204px;
+    margin-bottom: 10px; }
+
+&.Signup {
+    position:relative;
+    top: -1690px;
+    left:1110px;
+     }
+
+ }
+
+
+h2{
+    position:relative;
+    top:-70px;	
+    left:590px;
+
 }
-
-.container_ask{
-position:relative;
-top: -200px;
-left: 0px;
-}
-
-h2
-{
-position:relative;
-left: 100px;
-top: -100px;
-font-size: 50px
-}
-
-section {
-background: white;
-}
-
-nav div {
-  position:relative;
-  left: 430px;
-  top:0px;
-  
-}
-
-

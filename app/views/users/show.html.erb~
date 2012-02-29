@@ -1,4 +1,7 @@
-<%= render 'shared/singedin_post_view' %>
+
+<%= render 'shared/signedin_post_view' %>
+</div>
+
 <table class="profile">
   <tr>
       <td class="sidebar round">

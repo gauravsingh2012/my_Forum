@@ -1,5 +1,6 @@
 <h1>Q 'n' A</h1>
-<div class="container">
+
+
 <%= form_for(:session, url: sessions_path) do |f| %>
  <nav class="round">
   <div class="field1">
@@ -10,7 +11,7 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="actions">
+  <div class="actions1">
     <%= f.submit "Sign in" %>
   </div>
  </nav>
@@ -22,6 +23,8 @@
 
 <%= render 'shared/postview' %>
 
+
+<div class="Signup">
 <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 </div>
 

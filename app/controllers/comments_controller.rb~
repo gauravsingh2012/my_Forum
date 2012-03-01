@@ -5,12 +5,27 @@ class CommentsController < ApplicationController
    @comment.user = current_user
 
    @comment.save
-   respond_to do |format|
-      format.html { redirect_to @post, notice: 'Post was successfully created.' }
-      format.js	
-   
+    respond_to do |format|
+     format.html { redirect_to @post, notice: 'Post was successfully created.' }
+     format.js	
+    end
   end
 
   def destroy
   end
+
+  def rate_up
+   @post = Post.find(params[:post_id])
+   @comment = @post.comments.find(params[:format])
+   @comment.score += 1;
+   @comment.save;
+   respond_to do |format|
+     format.html { redirect_to @post, notice: 'Comment was successfully rated up.' }
+   end
+  end
+
+  def rate_down
+   
+  end
+
 end

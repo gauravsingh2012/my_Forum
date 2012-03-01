@@ -1,0 +1,12 @@
+ <p>
+  <%= comment.text %>
+ </p>
+ <p>
+  Answered By:
+  <%= mail_to(comment.user.email,comment.user.name) %> 
+ </p>
+ <p>
+  <%= time_ago_in_words comment.created_at %> ago 
+ </p>
+<hr />
+

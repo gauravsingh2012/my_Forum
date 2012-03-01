@@ -3,36 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div {
-  &.field1 {
+  &.field, &.actions {
     position:relative;
-    top:-70px;	
-    left:690px;
-    margin-bottom: 10px; }
-
-&.field2 {
-    position:relative;
-    top:-129px;
-    left:950px;
-    margin-bottom: 10px; }
-
-&.actions1 {
-    position:relative;
-    top:-167px;
-    left:1204px;
-    margin-bottom: 10px; }
-
-&.Signup {
-    position:relative;
-    top: -1690px;
-    left:1110px;
-     }
-
- }
-
-
-h2{
-    position:relative;
-    top:-70px;	
-    left:590px;
-
-}
+    left:20px;
+    margin-bottom: 10px; } }

@@ -25,6 +25,8 @@ a {
 
 div {
   &.field, &.actions {
+    position:relative;
+    left:80px;
     margin-bottom: 10px; } }
 
 #notice {

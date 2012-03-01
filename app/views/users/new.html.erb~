@@ -19,7 +19,7 @@
     <%= f.label :password_confirmation, "Confirmation" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions3">
+  <div class="actions2">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>

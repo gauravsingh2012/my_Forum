@@ -16,6 +16,13 @@ Posted By:
  <p>
   <%= time_ago_in_words comment.created_at %> ago 
  </p>
+ <p>
+  Rating: <%=comment.score %> 	  
+  <%= link_to "Rate Up",rate_up_post_path( @post.id, comment.id ) %> 
+  | 
+  <%= link_to "Rate Down",rate_down_post_path( @post.id, comment.id )%>
+ </p>
+ 
 <hr />
 <% end %>
 </div>

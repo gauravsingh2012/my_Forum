@@ -5,12 +5,13 @@ class CommentsController < ApplicationController
    @comment.user = current_user
 
    @comment.save
-   respond_to do |format|
-      format.html { redirect_to @post, notice: 'Post was successfully created.' }
-      format.js	
-   end
+    respond_to do |format|
+     format.html { redirect_to @post, notice: 'Post was successfully created.' }
+     format.js	
+    end
   end
 
   def destroy
   end
+
 end

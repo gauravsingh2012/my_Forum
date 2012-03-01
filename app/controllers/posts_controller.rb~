@@ -50,7 +50,7 @@ class PostsController < ApplicationController
         format.json { render json: signin_path, status: :created, location: @post }
       else
         format.html { render action: "new" }
-        #format.js
+        format.js
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -83,5 +83,27 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+ def rate_up
+   @post = Post.find(params[:id])
+   @comment = @post.comments.find(params[:format])
+   @comment.score += 1;
+   @user_karma = @comment.user
+   @comment.save;
+   @user_karma.karma += 1;
+   if @user_karma.save!
+   redirect_to @post;
+   else
+   @user_karma.errors.full_messages
+   end
+  end
+
+ def rate_down
+   @post = Post.find(params[:id])
+   @comment = @post.comments.find(params[:format])
+   @comment.score -= 1;
+   @comment.save;
+   redirect_to @post;
   end
 end

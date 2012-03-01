@@ -1,12 +1,11 @@
 
 <%= render 'shared/signedin_post_view' %>
-</div>
 
 <table class="profile">
   <tr>
       <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
-    </td>
+      <strong>Name</strong> <%= @user.name %><br />
+      </td>
   </tr>
 </table>

@@ -84,4 +84,23 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ def rate_up
+   @post = Post.find(params[:id])
+   @comment = @post.comments.find(params[:format])
+   @comment.score += 1;
+   @user_karma = @comment.user
+   @comment.save;
+   @user_karma.karma += 1;
+   @user_karma.save!
+   redirect_to @post;
+     end
+
+ def rate_down
+   @post = Post.find(params[:id])
+   @comment = @post.comments.find(params[:format])
+   @comment.score -= 1;
+   @comment.save;
+   redirect_to @post;
+  end
 end

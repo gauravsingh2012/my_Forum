@@ -1,8 +1,8 @@
 <div id = "postform">
-
 <%= render :partial => 'posts/form' %>
-
 <h2> Questions </h2>
+</div>
+
 <% @posts = Post.all %>
 <hr />
 
@@ -15,9 +15,8 @@
   <%= time_ago_in_words post.created_at %> ago
   </p>
   <hr />
-
 <% end %>
-</div>
+
 
 
 

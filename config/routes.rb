@@ -6,6 +6,10 @@ MyForum::Application.routes.draw do
   get "create/destroy"
 
    resources :posts do 
+        member do
+        get 'rate_up'
+        get 'rate_down'
+        end
 	resources :comments
    end
 

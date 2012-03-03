@@ -1,3 +1,4 @@
+<div id = "comments_rate">
 <h4> <%= @post.content %></h4>
 Posted By:
 <%= mail_to(@post.email,@post.name) %>
@@ -18,9 +19,9 @@ Posted By:
  </p>
  <p>
   Rating: <%=comment.score %> 	  
-  <%= link_to "Rate Up",rate_up_post_path( @post.id, comment.id ) %> 
+  <%= link_to "Rate Up",rate_up_post_path( @post.id, :id2 => comment.id ), :remote => true %> 
   | 
-  <%= link_to "Rate Down",rate_down_post_path( @post.id, comment.id )%>
+  <%= link_to "Rate Down",rate_down_post_path( @post.id, :id2 => comment.id ), :remote => true %>
  </p>
  
 <hr />
@@ -37,5 +38,5 @@ Posted By:
  </p>
 <% end %>
 <% end %>
-
+</div>
 

@@ -1,8 +1,41 @@
-<h2><%= link_to post.content,post %></h2>
-  <p>
-   Posted By:<%= mail_to(post.email,post.name) %>
-  </p>
-  <p>
-  <%= time_ago_in_words post.created_at %> ago
-  </p>
-  <hr />
+<h4> <%= @post.content %></h4>
+Posted By:
+<%= mail_to(@post.email,@post.name) %>
+
+<h5> Answers </h5>
+
+<div id = "comments">
+<% @post.comments.each do |comment| %>
+ <p>
+  <%= comment.text %>
+ </p>
+ <p>
+  Answered By:
+  <%= mail_to(comment.user.email,comment.user.name) %> 
+ </p>
+ <p>
+  <%= time_ago_in_words comment.created_at %> ago 
+ </p>
+ <p>
+  Rating: <%=comment.score %> 	  
+  <%= link_to "Rate Up",rate_up_post_path( @post.id, :id2 => comment.id ), :remote => true %> 
+  | 
+  <%= link_to "Rate Down",rate_down_post_path( @post.id, :id2 => comment.id ),:remote => true %>
+ </p>
+ 
+<hr />
+<% end %>
+</div>
+
+<% if signed_in? %>
+<%= form_for [@post, @post.comments.build], remote: true do |f| %>
+ <p>
+ <%= f.text_area :text, :size => '40x10'%>
+ </p>
+ <p>
+ <%= f.submit  "Post Answer" %>
+ </p>
+<% end %>
+<% end %>
+
+

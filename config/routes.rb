@@ -10,6 +10,7 @@ MyForum::Application.routes.draw do
         get 'rate_up'
         get 'rate_down'
         end
+        put 'rate_up', :on => :member
 	resources :comments
    end
 

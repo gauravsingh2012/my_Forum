@@ -8,6 +8,8 @@ MyForum::Application.routes.draw do
    resources :posts do 
         member do
         get 'rate_up'
+        get 'rate_down'
+        put 'rate_up', :on => :member
         end
 	resources :comments
    end

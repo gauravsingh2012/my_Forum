@@ -100,13 +100,20 @@ class PostsController < ApplicationController
   end
 
  def rate_down
+   if current_user.karma >= 10
    @post = Post.find(params[:id])
    @comment = @post.comments.find(params[:id2])
    @comment.score -= 1;
-   @comment.save;
-   respond_to do |format|
-    format1.js
-   end  
-
+   @user_karma = @comment.user
+   @user_karma.karma -= 1;
+   @user_karma.save!
+    if @comment.save
+     respond_to do |format|
+      format.js
+     end
+    end
+   else
+   render :js =>  "alert('You Cannot Rate Down an Answer. You Need more Karma Points');"
    end
+  end
 end

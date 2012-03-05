@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: valid_email_regex }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6}, :on => :create
   #validates :password_digest, length: { minimum: 6}
-  after_save :create_remember_token
+  before_create :create_remember_token
   
 private
   def create_remember_token

@@ -5,7 +5,7 @@
   <tr>
       <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>Name</strong> <%= @user.name %><br />
+      <strong>Karma</strong> <%= @user.karma %><br />
       </td>
   </tr>
 </table>

@@ -2,9 +2,11 @@
 <%= render :partial => 'posts/form' %>
 <h2> Questions </h2>
 </div>
-<% @posts = Post.all %>
-<hr />
 
+<% @posts = Post.order("name").page(params[:page]).per(5) %>
+
+<hr />
+<%= paginate @posts %>
 <% @posts.each do |post| %>
   <h3><%= link_to post.content,post %></h3>
   <p>

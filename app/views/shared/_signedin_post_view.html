@@ -1,6 +1,9 @@
 <div class="Signin">
-<% @posts = Post.all %>
+
+<% @posts = Post.order("name").page(params[:page]).per(5) %>
+
 <h1> Questions & Answers Blog </h1>
+
 
 <% @posts.each do |post| %>
   <h2><%= link_to post.content,post %></h2>
@@ -12,6 +15,7 @@
   </p>
  <hr />
 <% end %>
+<%= paginate @posts %>
 </div>
 
 

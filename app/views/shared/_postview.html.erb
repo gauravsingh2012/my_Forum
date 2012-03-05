@@ -3,7 +3,8 @@
 <h2> Questions </h2>
 </div>
 
-<% @posts = Post.all %>
+<% @posts = Post.order("name").page(params[:page]).per(5) %>
+
 <hr />
 
 <% @posts.each do |post| %>
@@ -16,6 +17,7 @@
   </p>
   <hr />
 <% end %>
+<%= paginate @posts %>
 
 
 

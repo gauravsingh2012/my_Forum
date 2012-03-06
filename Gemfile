@@ -7,7 +7,7 @@ gem 'kaminari'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'sqlite3'
 gem 'annotate', '~> 2.4.1.beta'
 
 
